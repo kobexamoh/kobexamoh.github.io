@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Bootstrap 5.0 -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="/css/style.css" rel="stylesheet" />
+    <title>Kobe Amoh</title>
+</head>
+
+
+
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-md navbar-light mb-4 px-4 pe-md-5">
+		<a class="navbar-brand" id="homeicon" href="/"><strong>ka.</strong></a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="/about">about</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/work">work</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="/blog">blog</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/contact">contact</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+    <div class="container py-4 ps-4 pe-5">
+        <div class="row mb-3">
+            <div class="col-12 col-lg-3">
+                <!-- Blog Post Metadata -->
+                <aside>
+                    <p>Date: February 2025</p>
+                    <p><strong>Topics</strong></p>
+                    <ul>
+                        <li>Data Science</li>
+                        <li>Policy</li>
+                        <li>Explainers</li>
+                        <li>Data Privacy</li>
+                        <li>Data Ethics</li>
+                        <li>Data Governance</li>
+                        <li>Tech for Good</li>
+                        <li>Data Storytelling</li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="col-12 col-lg-9">
+                <!-- Blog Post -->
+                <h1 class="pt-5 fw-bolder display-5">On Technology, Privacy, and Good Governance (Part 1)</h1>
+
+                <p class="lead fs-5 fst-italic bg-takeaways">This is a short piece explaining k-anonymity and its importance for
+                    people in the
+                    civil service. The technical information is very serious, and the background information is equally
+                    very serious and absolutely not meant to reflect on any current political officials. As the fine
+                    print in many a book says, any resemblance to real people is entirely coincidental.
+                    <br />Wink wink.
+                </p>
+                <hr />
+                <section class="mb-3">
+                    <h2 class="blog-heading fw-bold">A Totally Made-Up Scenario</h2>
+                    <p>Imagine that you're a civil servant - say, a special government employee. You've been brought in
+                        to do a job for the federal government - namely, tracking government waste and helping the
+                        government be more efficient in resources (people, finances, disbursements, you name it). When
+                        you're brought in, you boldly proclaim that you're going to put together an incredible team that
+                        digs up all the information related to the bureaucracy, that the people voted for the
+                        administration to have you do just that, and that you'll be very transparent about the results
+                        you're finding. You announce your hypothesis that the government has trillions in debt and that
+                        the money that you'll find will balance it out.</p>
+
+
+                    <p>As you're doing your work on a fine late-winter morning, you decide to share a bit of the
+                        findings with the public. After all, you promised to be transparent, and the people want this!
+                        You take to your favourite social media of choice and make a screenshot of the data from one of
+                        the spreadsheets that your new hires have sent you. You're pleased with yourself. The evidence
+                        is now out there, and the country can see just how amazing your work is. Your phone pings with a
+                        notification and you smile to yourself as you pull it out because it clearly means people are
+                        reposting the evidence you've shared. You pull the notification down and raise an eyebrow; your
+                        boss's lawyer and one of the data engineers have sent you a meeting request with the subject
+                        line “URGENT”. You put on your black baseball cap, sit at your desk, and log into the Teams
+                        link.</p>
+                    <p>Your employee and the lawyer are going haywire. Apparently, the screenshot you shared of some
+                        government spending might have broken some privacy laws, and they need you to take the post down
+                        <em>fast</em> before any of the opposition parties see it and take your boss to court over it.
+                        You're confused. No one's name is in the screenshot: it's just cities where the government
+                        funding went to, approximate dollar amounts, the year the money went out, and some vague
+                        keywords/memos about what the money was for. The interns told you nothing identifiable was
+                        there, and there isn't. You express as much and cross your arms, and the lawyer sighs while the
+                        data engineer removes their glasses and rubs their temple.
+                    </p>
+                    <p>“Seriously?” the engineer asks. “You've never heard of <em>k-anonymity</em>?”</p>
+                    <p>Congratulations. You've now opened a legal can of worms for the administration.</p>
+                </section>
+
+                <section>
+                    <h2 class="blog-heading fw-bold">K-Anonymity, Explained</h2>
+                    <p>In this totally arbitrary and not at all (as of early March, 2025) current scenario, the
+                        person-brought-in-to-help-government-efficiency had no idea about something called
+                        <em>k-anonymity</em>. If you're unfamiliar with this term, that's okay. By the end of this post,
+                        you'll have a rough understanding of what it is, why it's important, and you'll start thinking
+                        about it when working with data or sharing data publicly.
+                    </p>
+                    <p>(For the moment, we won't get into the super technical aspects of modifying datasets to ensure
+                        <em>k-anonymity</em> is reached. If there's interest in it, maybe I'll share a post in future
+                        with an example.)
+                    </p>
+                    <h3>The definition</h3>
+                    <p>In data science, <em>k-anonymity</em> is a term used to describe how successfully a dataset
+                        anonymizes individuals. According to Google Cloud, “A dataset is <em>k</em>-anonymous if
+                        quasi-identifiers for each person in the dataset are identical to at least <em>k</em> - 1 other
+                        people also in the dataset”.<a href="#note-1">&sup1;</a></p>
+                    <p>At the simplest level: in a dataset, if more people share the same attributes, it's much harder
+                        to identify any given person.</p>
+                    <p>Let's break down some of the terminology used.</p>
+                </section>
+
+                <section>
+                    <h4>(A detour to understand quasi-identifiers)</h4>
+                    <p>In data science, quasi-identifiers are pieces of information that identify an individual
+                        <em>only</em> when combined with other pieces of data.<a href="#note-2">&sup2;</a> (They are
+                        contrasted with direct identifiers, which, as their name suggests, outright identify
+                        individuals).
+                    </p>
+                    <p>On their own, “Month: July”, “Location: West Country”, “Year: 1980”, “Country: England”, “Hair
+                        color: brown”, or “Date: 18” don't really mean too much. July 31 is just a date, lots of people
+                        have brown hair, and if you're an American hockey fan, 1980 is a great year because the US beat
+                        the USSR in the <em>Miracle on Ice</em>. Those identifiers signify nothing and can stand on
+                        their own without calling attention to someone. But the moment you have them together (and
+                        maybe, just maybe, include an identifier called “odd bodily scars” with the value “lightning
+                        bolt” in there), you start to get an impression that <em>maybe</em> a certain individual fits
+                        the bill far more than others<a href="#note-3">&sup3;</a>.</p>
+
+                    <div class="d-flex align-items-center justify-content-center my-5"><iframe src="https://giphy.com/embed/jncb7lHMdHkmdBrUQ2" width="480" height="480" 
+                            frameBorder="0" class="giphy-embed ratio ratio-16x9" allowFullScreen></iframe>
+                        <p><a href="https://giphy.com/gifs/SkyTV-amazing-harry-potter-brilliant-jncb7lHMdHkmdBrUQ2"></a></p>
+                    </div>
+                    
+                    <p>Direct identifiers are the opposite of quasi-identifiers. In this very fictional example, “Harry
+                        Potter” is very identifying. Names are usually examples of direct identifiers (unless you are
+                        yet another person with the fortune of being named for The Boy Who Lived).</p>
+                    <p>The importance of quasi-identifiers is that an 'adversary' - someone who would like to find
+                        out the identity of an individual in a dataset - uses them to piece together who the individual
+                        is.<a href="#note-4">&#8308;</a></p>
+                    <p>This comes with assumptions (some implicit, some not so much): you could assume the adversary
+                        knows the individual and want to figure out what other identifiers belong to them, or you could
+                        assume the adversary knows some identifiers and wants to figure out other identifiers to match
+                        other attributes in a large dataset to the individual.</p>
+                </section>
+                <section>
+                    <h3>Back to k-anonymity</h3>
+                    <p>Okay, back to <em>k-anonymity</em>. Remember, the definition we were working with was this:</p>
+                    <p class="ps-4 border-start border-2">A dataset is <em>k</em>-anonymous if quasi-identifiers for
+                        each person in the dataset are
+                        identical to at least <em>k</em> - 1 other person also in the dataset.<a href="#note-5">&#8309;</a>
+                    </p>
+                    <p>The minimum <em>meaningful </em>k value one should aim for is 2. If k was equal to 1, it would
+                        mean that the person would be uniquely identifiable (that is, they wouldn't be anonymous!) in
+                        the dataset! The larger the value of k, the more anonymous the person can be.</p>
+                    <p>In simple English, here's what this means:</p>
+                    <p>If you were to decompose the attributes of a bunch of people in a dataset and wanted to anonymize
+                        them in some way, for any given person, the dataset would be k-anonymous (where k is a number)
+                        if k-1 other people in the dataset had the same quasi-identifiers.</p>
+                    <p>Okay…a little more understood, but maybe it's time for an example.</p>
+                </section>
+                <section>
+                    <h2 class="blog-heading fw-bold">In another universe far far away…</h2>
+                    <p>Imagine you're the Dark Lord of a parallel world in the year 1975. You've received a prophecy
+                        that a child born in the next little bit is going to be your undoing. Luckily, you have some
+                        data analysts on your team and they're pouring through scripts and birth dates to figure out
+                        which possible kid you must…uh…pay a visit to. The prophecy is vague and there's not much detail
+                        to work with, but you've been tipped off that the child will have ruddy hair. After pulling a
+                        thesaurus out, you learn that ruddy means 'red'. Your newest intern (a very blonde rich guy with
+                        a cane) mentions that his contacts allege that there's three individuals it might be.</p>
+
+                        <!-- desktop table -->
+                        <div class="table-responsive mb-4">
+                            <table class="table table-bordered table-striped table-sm align-middle">
+                              <thead class="table-light">
+                                <tr>
+                                  <th class="text-start">Birth Month</th>
+                                  <th class="text-start">Birth Location</th>
+                                  <th class="text-end">Birth Year</th>
+                                  <th class="text-start">Birth Country</th>
+                                  <th class="text-start">Hair Colour</th>
+                                  <th class="text-start">Eye Colour</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>July</td>
+                                  <td>West Country</td>
+                                  <td class="text-end">1980</td>
+                                  <td>England</td>
+                                  <td>Brown</td>
+                                  <td>Green</td>
+                                </tr>
+                                <tr>
+                                  <td>March</td>
+                                  <td>Devon</td>
+                                  <td class="text-end">1980</td>
+                                  <td>England</td>
+                                  <td>Red</td>
+                                  <td>Blue</td>
+                                </tr>
+                                <tr>
+                                  <td>September</td>
+                                  <td>Oxfordshire</td>
+                                  <td class="text-end">1979</td>
+                                  <td>England</td>
+                                  <td>Brown</td>
+                                  <td>Brown</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+
+                        <!-- mobile table
+                        <div class="d-block d-md-none mb-4">
+                            <div class="row g-3">
+                              <div class="col-12">
+                                <div class="border rounded p-3">
+                                  <p><strong>Birth Month:</strong> July</p>
+                                  <p><strong>Birth Location:</strong> West Country</p>
+                                  <p><strong>Birth Year:</strong> 1980</p>
+                                  <p><strong>Birth Country:</strong> England</p>
+                                  <p><strong>Hair Colour:</strong> Brown</p>
+                                  <p><strong>Eye Colour:</strong> Green</p>
+                                </div>
+                              </div>
+                              <div class="col-12">
+                                <div class="border rounded p-3">
+                                  <p><strong>Birth Month:</strong> March</p>
+                                  <p><strong>Birth Location:</strong> Devon</p>
+                                  <p><strong>Birth Year:</strong> 1980</p>
+                                  <p><strong>Birth Country:</strong> England</p>
+                                  <p><strong>Hair Colour:</strong> Red</p>
+                                  <p><strong>Eye Colour:</strong> Blue</p>
+                                </div>
+                              </div>
+                              <div class="col-12">
+                                <div class="border rounded p-3">
+                                  <p><strong>Birth Month:</strong> September</p>
+                                  <p><strong>Birth Location:</strong> Oxfordshire</p>
+                                  <p><strong>Birth Year:</strong> 1979</p>
+                                  <p><strong>Birth Country:</strong> England</p>
+                                  <p><strong>Hair Colour:</strong> Brown</p>
+                                  <p><strong>Eye Colour:</strong> Brown</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>  -->
+
+                    <p>The evidence is clear. At some point around January 1980, you and your crew need to be in the
+                        Devon area of England keeping an eye out for parents with reddish hair (or at least a mother
+                        that is heavily pregnant). Around the third week of February, you probably want to start
+                        thinking about befriending parents so they trust you. And on March 1, if you've done your
+                        homework, once you learn which woman has given birth, it's time to snatch the newborn and raise
+                        him in your environment ensuring that they never become your undoing and are aligned with you
+                        for eternity. And you didn't even have to use an Unforgiveable Curse!</p>
+
+                    <p>It's a simple example, but you might implicitly grasp what's going on. How did Parallel Dark Lord
+                        (let's call him Lord Wall-de-art) figure out <em>who</em> in the dataset was the baby with
+                        pinpoint certainty?</p>
+                    <p>Aside from being glaringly obvious, Lord Wall used <em>k-anonymity</em> to reverse identify the
+                        child…which just so happened to be Ronald Weasley's parallel universe self.</p>
+
+                    <!-- desktop table - unanonymized -->
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered table-striped table-sm align-middle">
+                          <thead class="table-light">
+                            <tr>
+                              <th class="text-start">First Name</th>
+                              <th class="text-start">Last Name</th>
+                              <th class="text-start">Birth Month</th>
+                              <th class="text-end">Birthday</th>
+                              <th class="text-start">Birth Location</th>
+                              <th class="text-end">Birth Year</th>
+                              <th class="text-start">Birth Country</th>
+                              <th class="text-start">Hair Colour</th>
+                              <th class="text-start">Eye Colour</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Harry</td>
+                              <td>Potter</td>
+                              <td>July</td>
+                              <td class="text-end">18</td>
+                              <td>West Country</td>
+                              <td class="text-end">1980</td>
+                              <td>England</td>
+                              <td>Brown</td>
+                              <td>Green</td>
+                            </tr>
+                            <tr>
+                              <td>Ron</td>
+                              <td>Weasley</td>
+                              <td>March</td>
+                              <td class="text-end">1</td>
+                              <td>Devon</td>
+                              <td class="text-end">1980</td>
+                              <td>England</td>
+                              <td>Red</td>
+                              <td>Blue</td>
+                            </tr>
+                            <tr>
+                              <td>Hermione</td>
+                              <td>Granger</td>
+                              <td>September</td>
+                              <td class="text-end">19</td>
+                              <td>Oxfordshire</td>
+                              <td class="text-end">1979</td>
+                              <td>England</td>
+                              <td>Brown</td>
+                              <td>Brown</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+
+                    <!-- mobile table - unanonymized
+                    <div class="d-block d-md-none mb-4">
+                        <div class="row g-3">
+                          <div class="col-12">
+                            <div class="border rounded p-3">
+                              <p><strong>First Name:</strong> Harry</p>
+                              <p><strong>Last Name:</strong> Potter</p>
+                              <p><strong>Birth Month:</strong> July</p>
+                              <p><strong>Birthday:</strong> 18</p>
+                              <p><strong>Birth Location:</strong> West Country</p>
+                              <p><strong>Birth Year:</strong> 1980</p>
+                              <p><strong>Birth Country:</strong> England</p>
+                              <p><strong>Hair Colour:</strong> Brown</p>
+                              <p><strong>Eye Colour:</strong> Green</p>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="border rounded p-3">
+                              <p><strong>First Name:</strong> Ron</p>
+                              <p><strong>Last Name:</strong> Weasley</p>
+                              <p><strong>Birth Month:</strong> March</p>
+                              <p><strong>Birthday:</strong> 1</p>
+                              <p><strong>Birth Location:</strong> Devon</p>
+                              <p><strong>Birth Year:</strong> 1980</p>
+                              <p><strong>Birth Country:</strong> England</p>
+                              <p><strong>Hair Colour:</strong> Red</p>
+                              <p><strong>Eye Colour:</strong> Blue</p>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="border rounded p-3">
+                              <p><strong>First Name:</strong> Hermione</p>
+                              <p><strong>Last Name:</strong> Granger</p>
+                              <p><strong>Birth Month:</strong> September</p>
+                              <p><strong>Birthday:</strong> 19</p>
+                              <p><strong>Birth Location:</strong> Oxfordshire</p>
+                              <p><strong>Birth Year:</strong> 1979</p>
+                              <p><strong>Birth Country:</strong> England</p>
+                              <p><strong>Hair Colour:</strong> Brown</p>
+                              <p><strong>Eye Colour:</strong> Brown</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div> -->
+                    
+                    <p>In this dataset of individuals, k-anonymity was <em>not</em> achieved: only ONE individual had
+                        the identifier that the Dark Lord was tipped off about (red hair). Thus, k would be equal to 1
+                        in this instance. If the prophecy had specified brown hair, The Dark Lord would have had to
+                        decide between the 1979 baby or the 1980 baby (and if he didn't feel extremely horrifying in
+                        going for two babies instead of one). If brown hair was the identifier, k would equal 2: that
+                        is, there would be minimum 2 individuals in the dataset with that identifier.</p>
+                    <p><em>With respect to the identifier of hair colour, if ‘brown' was the attribute, k would be
+                            1.</em>
+                    </p>
+                </section>
+
+                <section class="bg-takeaways mb-3">
+                    <h3>Key takeaways for busy experts</h3>
+                    <ul>
+                        <li>K-anonymity helps with anonymizing information.</li>
+                        <li>People who work with data that share data with the public <em>should</em> care about privacy
+                            and
+                            anonymizing their datasets.</li>
+                        <li>When sharing data you believe is already de-identified, it pays to take a moment to think like
+                            a
+                            malicious actor and ask yourself “Could someone do harm with the information I'm sharing?”</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="blog-heading fw-bold">Wrapping Up</h2>
+                    <p>This post was longer than expected, and we've only just begun to scratch the surface! In the next
+                        one, we'll dive a bit deeper into <em>k-anonymity</em>, try to anonymize a dataset a little more
+                        with something called “suppression”, and put on our biggest wizarding hat to prevent The Dark
+                        Lord from coming after our would-be protagonists with the help of some anonymization tools.</p>
+                </section>
+                <footer class="mt-5">
+                    <hr/>
+                    <!-- Endnotes and cheek go here -->
+                    <p id="note-1">&#185; Google Cloud. “Computing K-anonymity for a Dataset,” n.d.
+                        https://cloud.google.com/sensitive-data-protection/docs/compute-k-anonymity.</p>
+                    <p id="note-2">&#178; De Capitani Di Vimercati, Sabrina, and Sara Foresti. “Quasi-Identifier.” In
+                        Springer eBooks, 1010-11, 2011. https://doi.org/10.1007/978-1-4419-5906-5_763.</p>
+                    <p id="note-3">&#179; If only Lord Voldemort had a data scientist working as a
+                        Death Eater, he might have picked the right person in the prophecy.</p>
+                    <p id="note-4">&#8308; Data science sure loves such aggressive terminology - adversary!</p>
+                    <p id="note-5">&#8309; “Computing K-Anonymity for a Dataset.”</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>

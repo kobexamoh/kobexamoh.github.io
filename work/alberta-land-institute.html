@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Bootstrap 5.0 -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Kobe Amoh</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light mb-4 px-4 pe-md-5">
+        <a class="navbar-brand" id="homeicon" href="/"><strong>ka.</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">about</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/work">work</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/blog">blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Body -->
+    <div class="container py-4 ps-4 pe-5">
+        <div class="row mb-3 pt-2">
+            <div class="col-12 col-lg-4 sticky-metadata">
+                <h1 class="fw-bolder display-6">Alberta Land Institute</h1>
+                <h2 class="lead fs-5"><em>Bringing a research group into visual alignment with the university's
+                        brand.</em></h2>
+                <button class="btn btn-outline-secondary btn-sm d-block d-lg-none my-3" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#projectMetadata" aria-expanded="false"
+                    aria-controls="projectMetadata">
+                    View Project Details
+                </button>
+                <!-- Project Metadata -->
+                <aside id="projectMetadata" class="mb-4 collapse d-lg-block">
+                    <div>
+                        <h2 class="fs-4 mb-0">Timeline</h2>
+                        <p class="text-muted small">December 2024</p>
+                        <h2 class="fs-4 mb-0">Team</h2>
+                        <p class="text-muted small">Digital Content Coordinators (design + development)<br>
+                            Digital Content Coordinator Intern (content migration support)
+                            Research Communications Officer (content consolidation)<br>
+                        </p>
+                        <h2 class="fs-4 mb-0">Skills</h2>
+                        <p class="text-muted small">
+                            Project management + delegation<br>
+                            Information hierarchy + metadata organization<br>
+                            UX design<br>
+                            Quality assurance testing<br>
+                            Prototyping
+                        </p>
+                        <h2 class="fs-4 mb-0">Tools</h2>
+                        <ul class="text-muted small">
+                            <li>Design
+                                <ul>
+                                    <li>Pencil and paper</li>
+                                    <li>Browser-based prototyping</li>
+                                </ul>
+                            </li>
+                            <li>Development
+                                <ul>
+                                    <li>Cascade CMS</li>
+                                    <li>Bootstrap</li>
+                                    <li>Google Sheets</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-12 col-lg-8">
+                <section class="mb-4">
+                    <h3>Project Brief</h3>
+                    <p>The Alberta Land Institute website refresh aimed to make research information more accessible and
+                        better aligned with the University of Alberta's overall brand and design. The original website
+                        was dated and not fully in step with current university standards, prompting a full migration
+                        and content overhaul within Cascade CMS.</p>
+                    <figure class="hero-frame project-ali my-4 shadow" data-aos="fade-up" data-aos-delay="100"
+                        data-aos-duration="1000">
+                        <img src="/img/work/alberta-land-institute-homepage.jpg"
+                            alt="Screenshot of the Alberta Land Institute landing page." class="img-fluid" />
+                        <!-- <figcaption>
+                          The Embedded Undergraduate Certificates landing page.
+                        </figcaption> -->
+                    </figure>
+                </section>
+                <section class="mb-4">
+                    <h3>Problem</h3>
+                    <p>The Alberta Land Institute's previous website was visually different from the University of
+                        Alberta's branding. The structure and presentation of their research
+                        content (particularly the metadata tied to scientific reports) was difficult to navigate and not
+                        designed for accessibility or responsiveness. Given the importance of their research in shaping
+                        land use policy, it was vital to present this information in a way that was both user-friendly
+                        and professionally consistent with the broader university ecosystem.</p>
+                    <figure class="hero-frame mt-3 mb-4 shadow-lg" data-aos="fade-up" data-aos-delay="400"
+                        data-aos-duration="1000">
+                        <img src="/img/work/alberta-land-institute-old-homepage.jpg"
+                            alt="Screenshot of the old Alberta Land Institute landing page." class="img-fluid" />
+                        <figcaption>
+                            The old Alberta Land Institute homepage.
+                        </figcaption>
+                    </figure>
+                </section>
+                <section class="mb-4">
+                    <h3>Goals</h3>
+                    <p>The goals were to create a clean, accessible site that displayed scientific information in a
+                        straightforward, user-friendly way. In particular, the project aimed to improve how research
+                        metadata was presented, ensuring clarity across devices and audiences.</p>
+                </section>
+                <section class="mb-4">
+                    <h3>Limitations</h3>
+                    <p>The project faced a significant time crunch. Initially scoped to be a six-week effort, we ended
+                        up completing the entire redesign and migration in just over two weeks in mid-December 2024.
+                        This was largely due to the need to finish before the winter holiday break. Additionally,
+                        content migration required careful decision-making: the Alberta Land Institute had accumulated a
+                        wealth of research projects and news items over the years, and not everything could or should be
+                        migrated. We had to define a cut-off point for what content would be migrated and prioritize
+                        what would be included.</p>
+                </section>
+                <section class="mb-4">
+                    <h3>Timeline</h3>
+                    <p>The project took place over approximately 2.5 weeks in December 2024 and was completed just
+                        before the university's holiday closure.</p>
+                </section>
+                <section class="mb-4">
+                    <h3>Tools and Technologies</h3>
+                    <p class="mb-lg-0">We used a mix of tools to move quickly:</p>
+                    <ul>
+                        <li>Pen and paper for initial wireframes</li>
+                        <li>Rapid prototyping in the browser with Cascade CMS for layout decisions</li>
+                        <li>Google Sheets to organize metadata for research projects and to support filterable/sortable
+                            data lists (FSDLs)</li>
+                        <li>Cascade CMS to build the final site + Bootstrap as a responsive framework</li>
+                    </ul>
+                </section>
+                <section class="mb-4">
+                    <h3>Team</h3>
+                    <p>I led the project as the primary developer and coordinator. The content manager (my supervisor)
+                        scoped out the initial project goals and deliverables. I worked closely with the Alberta Land
+                        Institute's Communications Officer and their Communications Partner to coordinate efforts. Two
+                        fellow content coordinators helped implement page builds, and an intern assisted with migrating
+                        news content.</p>
+                </section>
+                <section class="mb-4">
+                    <h3>Skills Used</h3>
+                    <ul>
+                        <li>Project management and delegation</li>
+                        <li>Client and team communication</li>
+                        <li>UX design and responsive web development</li>
+                        <li>Information hierarchy and metadata organization</li>
+                        <li>Content migration and CMS configuration</li>
+                        <li>Quality assurance and layout templating</li>
+                    </ul>
+                </section>
+                <section class="mb-4">
+                    <h3>Process</h3>
+                    <p>The communications officer at the Institute, Aysha Wu, did a fantastic job upfront by
+                        consolidating ALI's existing site content (images, pages, research reports, news briefings, and
+                        even transcripts for podcast episodes) and organizing them in Google Drive. This provided a
+                        strong foundation for identifying what content needed to move and how it should be structured.
+                    </p>
+                    <p>Once Aysha and my supervisor confirmed the goals and deliverables, I was brought onto the project
+                        to lead execution. I assessed each section of content, especially focusing on the research
+                        project pages. Using semantic HTML and Bootstrap, I translated key reports into responsive pages
+                        that adhered to accessibility standards.</p>
+                    <p>The main content types included a homepage, contact page, news section, and the research project
+                        pages. I defined layouts for each of these and delegated news page implementation to team
+                        members. One notable challenge was the migration of podcast content, where we brought over audio
+                        and transcript posts that met our inclusion criteria.</p>
+                    <p>For me, a highlight of this project was designing the research project pages. As someone who
+                        started post-secondary in biology and often struggled with poorly laid-out scientific reports,
+                        this part of the project felt deeply personal. I broke down each project into key metadata
+                        components: title, documents, year, project status, principal investigators, collaborators, and
+                        a project overview. Everything was structured to be scannable and responsive across devices.</p>
+                    <div class="g-3 mb-5">
+                        <div class="">
+                            <figure class="p-3 rounded shadow-sm outcome-frame h-100 mt-3 mb-4" data-aos="zoom-in"
+                                data-aos-delay="600" data-aos-duration="800">
+                                <video autoplay loop muted playsinline data-aos="zoom-in"
+                                    class="img-fluid rounded shadow mb-3">
+                                    <source src="/img/work/ali-responsive-reports.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <figcaption class="text-muted small mt-2">
+                                    Responsive layout for one of the research reports on the ALI website.
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+                <section class="mb-4">
+                    <h3>Outcomes</h3>
+                    <p>We launched the site successfully with a few days to spare before the holiday break. Content
+                        ownership has since transitioned fully to the Alberta Land Institute, and they now manage the
+                        site independently. We remain available for support if future issues arise.</p>
+                    <p>The outcome is a modern, responsive site that better reflects the university's digital standards
+                        and dramatically improves access to research information.</p>
+                </section>
+                <section class="mb-4">
+                    <h3>Personal Significance</h3>
+                    <p>This was a rewarding project that allowed me to bridge my background in biology with my current
+                        design and development work. Redesigning how scientific report briefs are displayed gave me the
+                        opportunity to fix frustrations I had experienced as a student and create a better user
+                        experience for others navigating similar information.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true
+        });
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
