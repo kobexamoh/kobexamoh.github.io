@@ -1,9 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
-    background-color: #FCFCFC;
+    background-color: #FCFCFC;   
     color: #36454F;
-    font-family: 'Oxygen', sans-serif;
+}
+
+body p {
+  font-family: 'PT Serif', serif;
+}
+
+body h2,
+body h3,
+body h4,
+body h1,
+body h5 {
+  font-family: 'Oxygen', sans-serif;
 }
 
 a, a:link {
