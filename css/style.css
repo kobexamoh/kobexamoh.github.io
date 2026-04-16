@@ -10,6 +10,9 @@ h2#recent-work {
   color: #cea65a;
 }
 
+/* TODO: refactor CSS link styles to link-visited-hover-active order */
+/* TODO: switch to design tokens + variables for easier maintenance/reference */
+
 /* new stylized highlight SVG brush effect for links (homepage for now as test) */
 a.stylized-link-homepage {
     background: url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-8&color=E8D4B0);
