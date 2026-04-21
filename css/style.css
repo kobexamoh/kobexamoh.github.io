@@ -12,6 +12,7 @@ h2#recent-work {
 
 /* TODO: refactor CSS link styles to link-visited-hover-active order */
 /* TODO: switch to design tokens + variables for easier maintenance/reference */
+/* TODO: style links better (both in-page and nav) */
 
 /* new stylized highlight SVG brush effect for links (homepage for now as test) */
 a.stylized-link-homepage {
