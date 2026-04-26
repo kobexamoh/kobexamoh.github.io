@@ -7,7 +7,7 @@ body {
 }
 
 h2#recent-work {
-  color: #cea65a;
+    color: #cea65a;
 }
 
 /* TODO: refactor CSS link styles to link-visited-hover-active order */
@@ -22,7 +22,8 @@ a.stylized-link {
     text-decoration: none;
 }
 
-a, a:link {
+a,
+a:link {
     color: #36454F;
 }
 
@@ -31,7 +32,8 @@ a:visited {
 }
 
 a:hover {
-    /* background-color: #F6EEEE; */ /* TODO: remove */
+    /* background-color: #F6EEEE; */
+    /* TODO: remove */
     border-radius: 10px;
     text-decoration-color: #E8D4B0;
 }
@@ -39,7 +41,6 @@ a:hover {
 a:active {
     color: #C2B6CE;
 }
-
 
 /* blog styles */
 .bg-takeaways {
@@ -64,7 +65,8 @@ h2.blog-heading {
 }
 
 .nav-link.active {
-    padding-bottom: 10px; /* TODO: remove/change to be effectual */
+    padding-bottom: 10px;
+    /* TODO: remove/change to be effectual */
     text-decoration: underline;
     text-decoration-color: #E8D4B0;
 }
@@ -78,34 +80,36 @@ h2.blog-heading {
 }
 
 .outcome-frame {
-    background-color: #f0f2f5; /* light gray-blue to separate from #FCFCFC */
-    border: 1px solid #dee2e6; /* Bootstrap’s light gray */
-  }
+    background-color: #f0f2f5;
+    /* light gray-blue to separate from #FCFCFC */
+    border: 1px solid #dee2e6;
+    /* Bootstrap’s light gray */
+}
 
-  .hero-frame {
-    background-color: #36454F; /* your brand color */
+.hero-frame {
+    background-color: #36454F;
+    /* your brand color */
     padding: 2rem;
     border-radius: 0.5rem;
-  }
-  
-  .hero-frame img {
+}
+
+.hero-frame img {
     background-color: white;
     padding: 0.5rem;
     border-radius: 0.25rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  }
-  
-  .hero-frame figcaption {
+}
+
+.hero-frame figcaption {
     color: #eaeaea;
     font-size: 0.875rem;
     margin-top: 0.5rem;
-  }
+}
 
-  
-  .project-ali {
+.project-ali {
     background-color: #f2cd0059;
-  }
+}
 
-  .project-certificates {
+.project-certificates {
     background-color: #275d38ed;
-  }
+}
