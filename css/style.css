@@ -25,6 +25,11 @@ a.stylized-link {
     text-decoration: none;
 }
 
+/* Stylized hover animation */
+a.stylized-link:hover {
+    background-size: 100% 100%;
+}
+
 a,
 a:link {
     color: #36454F;
