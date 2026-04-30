@@ -20,6 +20,9 @@ a.stylized-link {
         /* linear-gradient(180deg, rgba(255, 255, 255, 0) 37%, rgba(232, 212, 176, 0.5) 37%); */
         /* url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-8&color=E8D4B0); */
         /* background: url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-8&color=E8D4B0); */
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size 0.3s ease-in-out;
     font-weight: 600;
     text-decoration-color: #E8D4B0;
     text-decoration: none;
